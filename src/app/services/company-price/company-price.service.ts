@@ -4,7 +4,6 @@ import {CompanyPriceResponseModel} from '../../service-models/company-price/comp
 import {HttpResponse} from '../../service-models/api/base.api.model';
 import {Observable} from 'rxjs';
 import {UpdateCompanyPriceModel} from '../../service-models/company-price/update.company-price.model';
-import {HttpHeaders} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
