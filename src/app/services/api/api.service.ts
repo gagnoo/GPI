@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {environment} from '../../../environments/environment';
 import {Observable} from 'rxjs';
 import {HttpResponse} from '../../service-models/api/base.api.model';
@@ -19,6 +19,7 @@ export class ApiService {
   }
 
   public post<T>(path: string, body: string): Observable<HttpResponse<T>> {
-    return this.http.post<HttpResponse<T>>(`${this.baseUrl}/${path}`, body);
+    const headers = new HttpHeaders({'Content-Type': 'application/json'});
+    return this.http.post<HttpResponse<T>>(`${this.baseUrl}/${path}`, body, {headers});
   }
 }
